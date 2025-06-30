@@ -1,0 +1,30 @@
+name = "map-mcp-tools"
+main = "src/index.ts"
+compatibility_date = "2025-05-09"
+compatibility_flags = ["nodejs_compat"]
+
+# For Server-Sent Events support
+workers_dev = true
+
+# Assets for Cloudflare Workers
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[vars]
+# Default values for development only (will be overridden by secret variables in production)
+# You should set these as secrets when deploying:
+# wrangler secret put OPENAI_API_KEY
+# wrangler secret put MAPBOX_ACCESS_TOKEN (production token)
+
+# Bind a KV Namespace for persistent storage if needed
+# [[kv_namespaces]]
+# binding = "MAP_STORAGE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+[build]
+command = "npm run build"
+
+# Configure different environments
+[env.staging]
+name = "map-mcp-tools-staging"

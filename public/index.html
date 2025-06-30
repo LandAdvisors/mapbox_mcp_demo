@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map MCP Tools</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Map MCP Tools</h1>
+  </header>
+
+  <main>
+    <!-- Map Container -->
+    <div id="map-container"></div>
+
+    <!-- Chat Interface -->
+    <div class="chat-panel">
+      <div id="chat-messages"></div>
+
+      <div class="form-container">
+        <form id="chat-form">
+          <input
+            id="message-input"
+            type="text"
+            placeholder="Ask about the map..."
+          >
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Map MCP Tools - Created with Cloudflare Workers</p>
+  </footer>
+</body>
+</html>
